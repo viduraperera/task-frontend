@@ -1,6 +1,7 @@
 import { PricingData } from "@/constants/GlobalConstants";
 import Image from "next/image";
 import React from "react";
+import VillaDetails from "./VillaCards";
 
 export default function Pricing() {
   return (
@@ -12,6 +13,8 @@ export default function Pricing() {
           experience at Wilpattu National Park.
         </p>
       </div>
+      <VillaDetails/>
+      <h2 className="pb-3">Safari Experience</h2>
       <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
         {PricingData.map((packageItem, index) => (
           <div className="col" key={index}>
