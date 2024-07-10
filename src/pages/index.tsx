@@ -6,6 +6,7 @@ import Head from "next/head";
 import Script from "next/script";
 import Container from "react-bootstrap/Container";
 import { Spinner } from "react-bootstrap";
+import Dashboard from "./dashboard";
 
 const Pricing = React.lazy(() => import("@/components/Pricing"));
 
@@ -25,28 +26,16 @@ export default function Home() {
           href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
       </Head>
       <Script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         strategy="afterInteractive"
       />
-      <Container as="main" className="py-4 px-3 mx-auto">
-        <h1>Welcome to Echo Wilpatthu</h1>
-        <TopDescription />
-        <hr className="col-1 my-5 mx-0" />
-        <Carousel />
-        <Suspense
-          fallback={
-            <div className="d-flex justify-content-center my-5">
-              <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
-            </div>
-          }
-        >
-          <Pricing />
-        </Suspense>
-      </Container>
+      <Dashboard />
     </>
   );
 }

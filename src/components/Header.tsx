@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -5,6 +6,14 @@ export default function Header() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
+        <Image
+          src="/assets/images/logo.webp"
+          alt="Animal"
+          loading="lazy"
+          width={40} // Adjust the width as needed
+          height={40} // Adjust the height as needed
+          style={{ objectFit: "contain", height: "auto" }}
+        />
         <a className="navbar-brand" href="/">
           Echo Wilpattu
         </a>
