@@ -1,5 +1,7 @@
 import Carousel from "@/components/Carousel";
 import Header from "@/components/Header";
+import Pricing from "@/components/Pricing";
+import TopDescription from "@/components/TopDescription";
 import Head from "next/head";
 import Script from "next/script";
 import Container from "react-bootstrap/Container";
@@ -32,9 +34,10 @@ export default function Home() {
       <Container as="main" className="py-4 px-3 mx-auto">
         <Header />
         <h1>Build Bootstrap with React</h1>
-
+        <TopDescription />
         <hr className="col-1 my-5 mx-0" />
         <Carousel />
+        <Pricing/>
         {/* 
         <Footer /> */}
       </Container>
