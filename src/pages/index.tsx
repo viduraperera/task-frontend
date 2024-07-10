@@ -1,14 +1,13 @@
+import React, { Suspense } from "react";
 import Carousel from "@/components/Carousel";
 import Header from "@/components/Header";
-import Pricing from "@/components/Pricing";
 import TopDescription from "@/components/TopDescription";
 import Head from "next/head";
 import Script from "next/script";
 import Container from "react-bootstrap/Container";
-// import AppGuides from "@/components/AppGuides";
-// import Footer from "@/components/Footer";
+import { Spinner } from "react-bootstrap";
 
-// import ExampleComponents from "@/components/ExampleComponents";
+const Pricing = React.lazy(() => import("@/components/Pricing"));
 
 export default function Home() {
   return (
@@ -36,7 +35,17 @@ export default function Home() {
         <TopDescription />
         <hr className="col-1 my-5 mx-0" />
         <Carousel />
-        <Pricing />
+        <Suspense
+          fallback={
+            <div className="d-flex justify-content-center my-5">
+              <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            </div>
+          }
+        >
+          <Pricing />
+        </Suspense>
       </Container>
     </>
   );
