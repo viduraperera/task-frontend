@@ -5,3 +5,47 @@ $success: #7952b3;
 body {
   padding: 1.5rem;
 }
+
+.booking-button {
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.booking-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.packageDetails {
+  text-align: left;
+  list-style-type: disc;
+  padding-left: 20px; 
+}
+
+.packageDetails li {
+  margin-bottom: 10px;
+}
+
+.cardRow {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border: transparent;
+  border-radius: 10px; 
+  background-color: #fff; 
+  box-shadow: 0 0 10px rgba(1, 1, 1, 1);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
