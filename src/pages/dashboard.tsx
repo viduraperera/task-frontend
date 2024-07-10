@@ -1,5 +1,7 @@
 import Carousel from "@/components/Carousel";
+import Location from "@/components/Location";
 import TopDescription from "@/components/TopDescription";
+import VillaDetails from "@/components/VillaCards";
 import Vision from "@/components/Vision";
 import React, { Suspense } from "react";
 import { Container, Spinner } from "react-bootstrap";
@@ -24,6 +26,7 @@ export default function Dashboard() {
       >
         <Vision />
         <Pricing />
+        <Location />
       </Suspense>
     </Container>
   );
