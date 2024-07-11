@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Echo Wilpattu Safari Experience
+
+This is a sample project that advertises safari experiences and stays in Wilpattu National Park. The project is built using Next.js with TypeScript, and styled using Bootstrap and SCSS.
+
+## Features
+
+- **Next.js**: Framework for server-rendered React applications.
+- **TypeScript**: Type-safe JavaScript with static type definitions.
+- **Bootstrap**: CSS framework for responsive design.
+- **SCSS**: Syntactically awesome stylesheets.
+- **Zod**: TypeScript-first schema declaration and validation.
+- **React Hook Form**: Performant, flexible, and extensible forms with easy-to-use validation.
+- **Jest**: Delightful JavaScript testing framework with a focus on simplicity.
 
 ## Getting Started
 
-First, run the development server:
+### Running Locally
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Install the dependencies:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   npm install
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Start the development server:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   npm start
+   ```
 
-## Learn More
+The application will be available at `http://localhost:3000`.
 
-To learn more about Next.js, take a look at the following resources:
+### Running with Docker
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Build the Docker image:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   docker build -t task-frontend .
+   ```
 
-## Deploy on Vercel
+2. Run the Docker container:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   docker run -p 3000:3000 task-frontend
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The application will be available at `http://localhost:3000`.
+
+## Scripts
+
+- **`npm install`**: Installs the project dependencies.
+- **`npm start`**: Starts the development server.
+- **`npm run build`**: Builds the application for production.
+- **`npm test`**: Runs the test suite.
+
+## License
+
+This project is licensed under the MIT License.
