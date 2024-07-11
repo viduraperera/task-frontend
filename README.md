@@ -14,6 +14,20 @@ This is a sample project that advertises safari experiences and stays in Wilpatt
 
 ## Getting Started
 
+### Cloning the Repository
+
+1. First, clone the repository:
+
+   ```bash
+   git clone https://github.com/viduraperera/task-frontend.git
+   ```
+
+2. Navigate to the Folder
+
+   ```bash
+   cd task-frontend
+   ```
+
 ### Running Locally
 
 1. Install the dependencies:
