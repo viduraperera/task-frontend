@@ -1,43 +1,36 @@
+import SubHeadings from "@/common/SubHeadings";
 import { PricingData } from "@/constants/GlobalConstants";
 import Image from "next/image";
 import React from "react";
-import VillaDetails from "./VillaCards";
 
-export default function Pricing() {
+export default function PricingDetails() {
   return (
     <div>
-      <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h1 className="display-4 fw-normal text-body-emphasis">Our Packages</h1>
-        <p className="fs-5 text-body-secondary">
-          Explore our exciting safari packages designed to give you the best
-          experience at Wilpattu National Park.
-        </p>
-      </div>
-      <VillaDetails/>
-      <h2 className="pb-3">Safari Experience</h2>
-      <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <SubHeadings text="Safari Experience" />
+
+      <div className="row row-cols-1 row-cols-md-3 g-4">
         {PricingData.map((packageItem, index) => (
           <div className="col" key={index}>
-            <div className="card mb-4 rounded-3 shadow-sm">
+            <div className="card h-100 rounded-3 shadow-sm">
               <Image
-                src="/assets/images/animal.webp"
+                src={packageItem.picture}
+                alt="Package Image"
                 className="card-img-top"
-                alt="Animal"
-                loading="lazy"
                 width={500}
                 height={300}
+                loading="lazy"
               />
-              <div className="py-3">
-                <h4 className="my-0 fw-normal">{packageItem.packageName}</h4>
-              </div>
-              <div className="card-body  d-flex flex-column">
+              <div className="card-body d-flex flex-column">
+                <h4 className="card-title fw-normal">
+                  {packageItem.packageName}
+                </h4>
                 <h1 className="card-title pricing-card-title">
                   {packageItem.price ? `$${packageItem.price}` : "Contact us"}
                   <small className="text-body-secondary fw-light">
                     {packageItem.price ? "/package" : ""}
                   </small>
                 </h1>
-                <ul className={`mt-3 mb-4 packageDetails`}>
+                <ul className="list-unstyled mb-4">
                   <li>{packageItem.accommodation}</li>
                   <li>{packageItem.safariExperience}</li>
                   <li>{packageItem.meals}</li>

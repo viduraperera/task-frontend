@@ -1,10 +1,13 @@
+import CustomInputField from "@/common/customer-inputs/CustomInputField";
+import CustomTextareaField from "@/common/customer-inputs/CustomTextareaField";
 import ModalPopup from "@/common/ModalPopup";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useState } from "react";
-import { Button, Modal, Spinner } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+// Define the structure of form inputs
 type FormInputs = {
   firstName: string;
   lastName: string;
@@ -12,6 +15,7 @@ type FormInputs = {
   comment: string;
 };
 
+// Initialize the form inputs
 const initialState: FormInputs = {
   firstName: "",
   lastName: "",
@@ -19,6 +23,7 @@ const initialState: FormInputs = {
   comment: "",
 };
 
+// Define the validation schema using Zod
 const zodSchema = z.object({
   firstName: z
     .string()
@@ -35,10 +40,11 @@ const zodSchema = z.object({
   comment: z.string().nonempty("Please enter a comment"),
 });
 
-export default function Bookings({ values }: { values?: FormInputs }) {
+export default function ContactUs({ values }: { values?: FormInputs }) {
   const [showPopup, setShowPopup] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Initialize form handling
   const {
     register,
     handleSubmit,
@@ -51,6 +57,7 @@ export default function Bookings({ values }: { values?: FormInputs }) {
 
   const onSubmit = async (data: FormInputs) => {
     setIsSubmitting(true);
+    // Log form data to console
     console.log(data);
     setTimeout(() => {
       reset();
@@ -62,7 +69,7 @@ export default function Bookings({ values }: { values?: FormInputs }) {
   const handleClose = () => setShowPopup(false);
 
   return (
-    <div className="col-md-7 col-lg-8">
+    <div className="col-md-7 col-lg-8" style={{ marginBottom: "200px" }}>
       <h4 className="mb-3">Contact Us</h4>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -70,63 +77,37 @@ export default function Bookings({ values }: { values?: FormInputs }) {
         noValidate
       >
         <div className="row g-3">
-          <div className="col-sm-6">
-            <label htmlFor="firstName" className="form-label">
-              First name
-            </label>
-            <input
-              type="text"
-              className={`form-control ${errors.firstName ? "is-invalid" : ""}`}
-              id="firstName"
-              {...register("firstName")}
-            />
-            <div className="invalid-feedback">{errors.firstName?.message}</div>
-          </div>
-
-          <div className="col-sm-6">
-            <label htmlFor="lastName" className="form-label">
-              Last name
-            </label>
-            <input
-              type="text"
-              className={`form-control ${errors.lastName ? "is-invalid" : ""}`}
-              id="lastName"
-              {...register("lastName")}
-            />
-            <div className="invalid-feedback">{errors.lastName?.message}</div>
-          </div>
-
-          <div className="col-12">
-            <label htmlFor="email" className="form-label">
-              Email
-            </label>
-            <input
-              type="email"
-              className={`form-control ${errors.email ? "is-invalid" : ""}`}
-              id="email"
-              {...register("email")}
-            />
-            <div className="invalid-feedback">{errors.email?.message}</div>
-          </div>
-
-          <div className="col-12">
-            <label htmlFor="comment" className="form-label">
-              Comment
-            </label>
-            <textarea
-              className={`form-control ${errors.comment ? "is-invalid" : ""}`}
-              id="comment"
-              style={{ height: "100px" }}
-              {...register("comment")}
-            ></textarea>
-            <div className="invalid-feedback">{errors.comment?.message}</div>
-          </div>
+          <CustomInputField
+            id="firstName"
+            label="First name"
+            register={register("firstName")}
+            error={errors.firstName?.message}
+          />
+          <CustomInputField
+            id="lastName"
+            label="Last name"
+            register={register("lastName")}
+            error={errors.lastName?.message}
+          />
+          <CustomInputField
+            id="email"
+            label="Email"
+            type="email"
+            register={register("email")}
+            error={errors.email?.message}
+          />
+          <CustomTextareaField
+            id="comment"
+            label="Comment"
+            register={register("comment")}
+            error={errors.comment?.message}
+          />
         </div>
 
         <hr className="my-4" />
 
         <Button
-          className="w-100 btn btn-primary btn-lg"
+          className="w-100 booking-button "
           type="submit"
           disabled={isSubmitting}
         >
@@ -137,6 +118,7 @@ export default function Bookings({ values }: { values?: FormInputs }) {
               size="sm"
               role="status"
               aria-hidden="true"
+              style={{ color: "black" }}
             />
           ) : (
             "Submit"
