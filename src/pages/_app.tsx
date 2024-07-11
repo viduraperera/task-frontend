@@ -1,4 +1,5 @@
 // _app.tsx
+import React from "react";
 import "@/styles/styles.scss";
 import type { AppProps } from "next/app";
 import Header from "@/components/Header";

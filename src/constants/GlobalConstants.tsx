@@ -1,17 +1,28 @@
 export const CarouselImageData = [
   {
-    src: "/assets/images/bird.webp",
-    alt: "Bird",
+    src: "/assets/images/carousel/carousel-one.jpg",
+    alt: "scenic-landscapes",
+    title: "Scenic Landscapes",
+    description:
+      "Marvel at the picturesque landscapes, from expansive lakes to dense forests, that define Wilpattu's beauty.",
   },
   {
-    src: "/assets/images/free-nature-images.jpg",
-    alt: "Nature",
+    src: "/assets/images/carousel/carousel-two.jpg",
+    alt: "expert-guides",
+    title: "Expert Guides",
+    description:
+      "Our experienced guides will enrich your safari experience with their extensive knowledge of the park's flora and fauna.",
   },
   {
-    src: "/assets/images/animal.webp",
-    alt: "Animal",
+    src: "/assets/images/carousel/carousel-three.jpg",
+    alt: "wildlife-encounters",
+    title: "Wildlife Encounters",
+    description:
+      "Encounter majestic creatures such as leopards, elephants, and sloth bears in their natural habitat.",
   },
 ];
+
+export const StaffImage = "/assets/images/staff.jpg";
 
 export const PricingData = [
   {
@@ -20,7 +31,8 @@ export const PricingData = [
     safariExperience: "Full-day safari with experienced guides",
     meals: "Breakfast and dinner included",
     additionalActivities: "Evening wildlife talks or cultural experiences",
-    price: 100,
+    price: 200,
+    picture: "/assets/images/experience/standard.jpg",
   },
   {
     packageName: "Deluxe Safari Experience",
@@ -28,7 +40,8 @@ export const PricingData = [
     safariExperience: "Extended safari with premium vehicle and guides",
     meals: "All meals included, with packed lunches during safaris",
     additionalActivities: "Guided nature walks or birdwatching tours",
-    price: 200,
+    price: 300,
+    picture: "/assets/images/experience/deluxe.webp",
   },
   {
     packageName: "Luxury Safari Experience",
@@ -37,7 +50,8 @@ export const PricingData = [
     meals: "Gourmet dining experience, including bush dinners",
     additionalActivities:
       "Exclusive sunset or sunrise safaris, photography tours",
-    price: 300,
+    price: 400,
+    picture: "/assets/images/experience/luxury.jpg",
   },
 ];
 
@@ -120,8 +134,8 @@ export const villaDetails = {
       "Access to swimming pool and spa facilities",
     ],
     image: "/assets/images/villa-images/villa-one.jpg",
-    pricePerNight: 350, // Price in USD
-    capacity: 2, // Maximum occupancy
+    pricePerNight: 350,
+    capacity: 2,
   },
   villa2: {
     name: "Wildlife Explorer Suite",
@@ -137,8 +151,8 @@ export const villaDetails = {
       "Access to communal lounge and dining area",
     ],
     image: "/assets/images/villa-images/villa-two.jpg",
-    pricePerNight: 250, // Price in USD
-    capacity: 2, // Maximum occupancy
+    pricePerNight: 250,
+    capacity: 2,
   },
   villa3: {
     name: "Family Adventure Lodge",
@@ -154,7 +168,13 @@ export const villaDetails = {
       "Children's playground and outdoor games",
     ],
     image: "/assets/images/villa-images/villa-three.jpg",
-    pricePerNight: 400, // Price in USD
-    capacity: 4, // Maximum occupancy
+    pricePerNight: 400,
+    capacity: 4,
   },
+};
+
+export const CareerSectionConstants = {
+  title: "Join the Echo Wilpattu Team",
+  description:
+    "Are you passionate about wildlife and conservation? Join our team atEcho Wilpattu and contribute to providing exceptional safari experiences while promoting sustainable tourism. We offer various roles that allow you to be a part of our mission to protect and celebrate nature.",
 };

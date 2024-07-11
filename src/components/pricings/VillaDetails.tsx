@@ -1,4 +1,5 @@
 // Import necessary dependencies and villaDetails object
+import SubHeadings from "@/common/SubHeadings";
 import { villaDetails } from "@/constants/GlobalConstants";
 import Image from "next/image";
 import React from "react";
@@ -9,7 +10,7 @@ export default function VillaDetails() {
 
   return (
     <div className="container py-5">
-      <h2 className="pb-3">Villa Details</h2>
+      <SubHeadings text="Our Accommodations" />
       <div className="row row-cols-1 row-cols-md-3 g-4">
         {villas.map((villa, index) => (
           <div key={index} className="col">

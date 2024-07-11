@@ -1,14 +1,7 @@
-import React, { Suspense } from "react";
-import Carousel from "@/components/Carousel";
-import Header from "@/components/Header";
-import TopDescription from "@/components/TopDescription";
+import React from "react";
 import Head from "next/head";
 import Script from "next/script";
-import Container from "react-bootstrap/Container";
-import { Spinner } from "react-bootstrap";
 import Dashboard from "./dashboard";
-
-const Pricing = React.lazy(() => import("@/components/Pricing"));
 
 export default function Home() {
   return (

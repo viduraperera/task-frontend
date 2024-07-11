@@ -28,10 +28,8 @@ export default function Carousel() {
               loading="lazy"
             />
             <div className="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>
-                Some representative placeholder content for the first slide.
-              </p>
+              <h5>{image.title}</h5>
+              <p>{image.description}</p>
             </div>
           </div>
         ))}

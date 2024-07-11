@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import HeaderItems from "../common/HeaderItems";
 
 export default function Header() {
   return (
@@ -10,13 +11,13 @@ export default function Header() {
           src="/assets/images/logo.webp"
           alt="Animal"
           loading="lazy"
-          width={40} // Adjust the width as needed
-          height={40} // Adjust the height as needed
-          style={{ objectFit: "contain", height: "auto" }}
+          width={40}
+          height={40}
+          className="logo"
         />
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" href="/">
           Echo Wilpattu
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -28,33 +29,14 @@ export default function Header() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className=" collapse navbar-collapse" id="navbarNavDropdown">
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" href={"/" || "/"}>
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href={"/blogs" || "/"}>
-                Blogs
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href={"/bookings" || "/"}>
-                Bookings
-              </Link>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Features
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Pricing
-              </a>
-            </li>
+            <HeaderItems href="/">Home</HeaderItems>
+            <HeaderItems href="/blogs">Blogs</HeaderItems>
+            <HeaderItems href="/contact-us">Contact Us</HeaderItems>
+            <HeaderItems href="/#careers">Careers</HeaderItems>
+            <HeaderItems href="/#pricing">Packages</HeaderItems>
+            <HeaderItems href="/#about-us">About Us</HeaderItems>
           </ul>
         </div>
       </div>
