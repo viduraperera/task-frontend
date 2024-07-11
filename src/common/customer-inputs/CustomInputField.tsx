@@ -1,5 +1,5 @@
 import React from "react";
-import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
+import { FieldValues, UseFormRegister } from "react-hook-form";
 import { ErrorMessage } from "../helpers";
 
 export default function CustomInputField({
