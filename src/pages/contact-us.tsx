@@ -1,4 +1,4 @@
-import ContactUs from "@/components/ContactUs";
+import ContactUs from "@/components/contact-us/ContactUs";
 import React from "react";
 
 export default function ContactUsPage() {
