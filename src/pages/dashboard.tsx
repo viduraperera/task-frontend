@@ -1,12 +1,12 @@
-import Carousel from "@/components/Carousel";
-import Location from "@/components/Location";
-import TopDescription from "@/components/TopDescription";
-import VillaDetails from "@/components/VillaCards";
-import Vision from "@/components/Vision";
+import TopDescription from "@/components/dashboard/TopDescription";
+import Vision from "@/components/dashboard/Vision";
 import React, { Suspense } from "react";
 import { Container, Spinner } from "react-bootstrap";
+import Location from "@/components/dashboard/Location";
+import Carousel from "@/components/dashboard/Carousel";
+import CareerSection from "@/components/dashboard/CareerSection";
 
-const Pricing = React.lazy(() => import("@/components/Pricing"));
+const Pricing = React.lazy(() => import("@/components/dashboard/Pricing"));
 
 export default function Dashboard() {
   return (
@@ -24,8 +24,15 @@ export default function Dashboard() {
           </div>
         }
       >
-        <Vision />
-        <Pricing />
+        <div id="about-us">
+          <Vision />
+        </div>
+        <div id="pricing">
+          <Pricing />
+        </div>
+        <div id="careers">
+          <CareerSection />
+        </div>
         <Location />
       </Suspense>
     </Container>

@@ -2,9 +2,9 @@ $success: #7952b3;
 
 @import "bootstrap/scss/bootstrap.scss";
 
-body {
-  padding: 1.5rem;
-}
+// body {
+//   padding: 1.5rem;
+// }
 
 .booking-button {
   background-color: transparent;
@@ -48,4 +48,9 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+.logo {
+  object-fit: contain;
+  height: auto;
 }
